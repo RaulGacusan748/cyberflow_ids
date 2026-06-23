@@ -1,0 +1,12 @@
+data/raw/*
+*.csv
+!data/processed/sampled_traffic.csv
+*.joblib
+!models/scaler.joblib
+!models/intrusion_detector.joblib
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
