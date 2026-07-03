@@ -1,0 +1,384 @@
+BUSINESS MODELS AND MARKETING FOR AGRIBUSINESS
+Presented by:
+ALMENDO, CRYSTAL PEARL V.
+ARGENIO, STEPHANIE JOY
+CARDEÑO, LORAINE
+FRANCISCO, ANGELA
+JARITO, JOAN
+LUNA, VICTORIA MIEL
+MERCADO, FRANCIS IAN
+OSAL, RANDEL NEL 
+SIERVO, MARICAR
+A Topic Report in Partial Fulfillment of the subject
+SPC 2: AGRIBUSINESS
+2nd Semester, S.Y. 2025-2026
+Unit 3: BUSINESS MODELS AND MARKETING FOR AGRIBUSINESS
+Assigned Presenter:  Victoria Miel Luna 
+I. OVERVIEW
+ Source: https://www.colliers.com/en-in/news/digital-market-place-for-farming
+Agribusiness operates within a dynamic environment characterized by market volatility, climate uncertainty, technological transformation, and evolving consumer preferences.
+OBJECTIVES:
+After studying this module, you should be able to:
+Explain the concept and components of the Business Model Canvas (BMC) and apply it to agribusiness enterprises.
+Evaluate different product innovation strategies including processing, packaging, and differentiation in agricultural markets.
+Compare and assess various pricing strategies (cost-based, market-based, value-based, and dynamic pricing) applicable to agribusiness products.
+Integrate business modeling, innovation, pricing, and distribution decisions into a coherent agribusiness marketing strategy.
+Apply strategic thinking to real-world agribusiness scenarios considering sustainability, risk, and long-term growth.
+This unit examines four critical pillars of agribusiness management: Business Model Canvas (BMC), product innovation, pricing strategies, and distribution channels with partnership building. It explores theoretical foundations, practical applications, and strategic implications. Each section integrates contemporary literature and recent textbooks to provide academically grounded yet practice-oriented insights. Read each lesson with comprehensiveness.
+Good luck and happy reading!!!
+Unit 3: BUSINESS MODELS AND MARKETING FOR AGRIBUSINESS
+II. DISCUSSION
+3.1 INTRODUCTION TO BUSINESS MODEL IN AGRIBUSINESS
+Assigned Presenters:       Crystal Pearl Almendo
+                                    Maricar Siervo
+What is a Business Model?
+A business model describes how an organization creates, delivers, and captures value. In agribusiness, this includes transforming agricultural inputs into consumable goods while coordinating production, processing, marketing, logistics, and finance. The Business Model Canvas (BMC), developed by Osterwalder and Pigneur (2010), is among the most widely used frameworks for visualizing and designing business models.
+Agriculture differs from other industries due to seasonality, perishability, biological production risks, and dependence on natural resources. Therefore, structured business modeling tools such as BMC help agripreneurs systematically plan operations and reduce uncertainty (Akridge et al., 2026).
+The Nine Building Blocks of the BMC
+The BMC consists of nine interrelated components:
+Customer Segments
+Value Propositions
+Channels
+Customer Relationships
+Revenue Streams
+Key Resources
+Key Activities
+Key Partnerships
+Cost Structure
+Source: https://blog.invgate.com/business-model-canvas
+Application Example in Agribusiness
+In Northern Samar, a large rice initiative involving local farmers and TAO Corp. has been introduced to expand rice yields using hybrid rice technology. The program works with farmers’ associations in Laoang, Las Navas, and Mondragon to boost productivity and market access.
+Such structured mapping allows agribusiness managers to identify inefficiencies and innovation opportunities (Akridge et al., 2026).
+ 
+Sustainable and Triple-Layer Business Models
+Recent research emphasizes sustainable business models incorporating environmental and social value alongside economic profit. The triple-layered business model integrates ecological impact and social contribution into strategic planning (Dionizi & Dhora, 2025).
+In agribusiness, this may involve:
+Sustainable sourcing - refers to procuring raw agricultural materials (e.g., crops, livestock, inputs) in ways that protect the environment, ensure ethical labor practices, and maintain long-term productivity of natural resources.
+Reduced carbon footprint - refers to minimizing greenhouse gas (GHG) emissions throughout the value chain—from production and processing to transportation and distribution (includes efficient fertilizer use, renewable energy adoption, low-emission logistics, and climate-smart agriculture).
+Fair trade partnerships - involve equitable agreements between farmers, cooperatives, processors, and buyers, ensuring fair pricing, decent working conditions, and shared value across the supply chain.
+Community-based production - refers to organizing agricultural production within local communities—often through cooperatives or farmer associations—to promote inclusive participation and shared benefits.
+PRACTICE
+ENVIRONMENTAL VALUE
+SOCIAL VALUE
+ECONOMIC VALUE
+Sustainable Sourcing
+Protects ecosystems
+Ethical labor practices
+Long-term supply stability
+Reduced Carbon Footprint
+Lowers emissions
+Climate resilience
+Energy savings
+Fair Trade Partnerships
+Encourages responsible farming
+Income fairness
+Stable supply contracts
+Community-Based Production
+Supports sustainable land use
+Local empowerment
+Collective profitability
+Figure 1. Integration into the Triple-Layered Business Model
+Sustainability has shifted from optional differentiation to strategic necessity.
+Digital Transformation in Agribusiness Models
+Between 2020–2026, digitalization significantly influenced agribusiness models. Precision agriculture, farm management software, blockchain traceability, and e-commerce platforms reshape value delivery systems (Akridge et al., 2026).
+Digital tools improve:
+Demand forecasting
+(Predicting future market demand using data analytics, seasonal trends, and price monitoring)
+🎯 How It Improves Agribusiness:
+Reduces overproduction and post-harvest losses
+Aligns planting schedules with expected market demand
+Stabilizes supply during peak and lean seasons
+Supports price planning and contract growing
+Input optimization
+(Ensuring the right quantity of seeds, fertilizer, feeds, and labor based on forecasted demand)
+🎯 How It Improves Agribusiness:
+Reduces excess input costs
+Prevents overuse of fertilizers and chemicals
+Improves productivity and sustainability
+Aligns production with buyer contracts
+Customer engagement
+🎯 How It Improves Agribusiness:
+Enhances market access
+Enables direct farm-to-consumer sales
+Builds brand trust through traceability
+Provides real-time buyer feedback
+Supply chain transparency
+(Improving visibility from farm to market through digital tracking and monitoring tools)
+🎯 How It Improves Agribusiness:
+Reduces information gaps
+Improves logistics coordination
+Prevents artificial shortages
+Strengthens food safety monitoring
+These technologies enhance competitiveness and resilience.
+Strategic Importance of BMC in Agribusiness
+The BMC supports:
+Strategic alignment
+🎯 Why It Matters in Agribusiness
+Aligns farm production with target markets (e.g., institutional buyers vs. retail consumers).
+Ensures that sustainability goals (e.g., organic certification) match customer expectations.
+Connects operational activities (planting, harvesting, logistics) with financial objectives.
+Prevents fragmented decision-making across the value chain
+Innovation planning
+🎯 Why It Matters in Agribusiness
+Encourages diversification (e.g., processed products instead of raw produce).
+Supports adoption of digital tools like demand forecasting and precision farming.
+Helps design new revenue streams (e.g., agri-tourism, farm-to-table delivery).
+Enables adaptation to changing consumer trends such as organic or traceable food.
+Risk identification
+🎯 Why It Matters in Agribusiness
+Agriculture is highly exposed to climate risks (typhoons, droughts).
+Price volatility can significantly affect income.
+Supply chain disruptions can cause post-harvest losses.
+Resource allocation
+🎯 Why It Matters in Agribusiness
+Ensures capital is invested in high-return crops or technologies.
+Helps prioritize spending on irrigation, storage, or processing facilities.
+Aligns labor deployment with peak production periods.
+Reduces waste of limited farm inputs.
+Investment analysis
+           🎯 Why It Matters in Agribusiness
+Determines whether value-added processing is financially viable.
+Assesses return on investment (ROI) for farm mechanization.
+Evaluates risks versus expected revenue in crop diversification.
+Attracts investors by clearly presenting revenue streams and cost structures.
+References:
+Akridge, J. T., Foltz, J. C., Yeager, E. A., Brewer, B. E., & Malone, T. (2026). Agribusiness management (7th ed.). Routledge.
+Dionizi, B., & Dhora, R. (2025). Reinventing rural economies through sustainable business models. Frontiers in Sustainability.
+Osterwalder, A., & Pigneur, Y. (2010). Business model generation. Wiley.
+__________________________________________________________________
+3.2 PRODUCT INNOVATION (Processing, Packaging, Differentiation)
+Assigned Presenters:    Angela Francisco
+                                    Loraine Cardeño
+Concept of Product Innovation
+Product innovation refers to the introduction of new or significantly improved goods or services. In agribusiness, innovation includes improvements in:
+Processing
+Transforming raw materials into finished products increases shelf life, market value, and income. 
+Examples include transforming cassava into flour or chips, turning fruits into juice or wine, and processing dairy into yogurt or cheese.
+Packaging
+Innovative, functional, and eco-friendly packaging enhances product appearance, preserves quality, and meets consumer demand for convenience.
+Branding
+Developing a unique brand identity, including professional labels and logos, builds consumer trust and allows for premium pricing.
+Product quality
+Implementing strict grading, sorting, and safety standards (e.g., HACCP) ensures consistency, which is crucial for building customer loyalty and accessing higher-value markets.
+Innovation is essential due to increasing consumer demand for quality, safety, convenience, and sustainability (Galati et al., 2024).
+Processing Innovation
+Processing innovation enhances value addition and reduces waste. Examples include:
+Cold chain technologies
+Including refrigerated transport, pre-cooling, and specialized cold storage—preserve perishable goods by maintaining optimal, uninterrupted temperatures.
+Dehydration and freeze-drying
+These technologies remove moisture to inhibit microbial growth, transforming perishable raw materials into shelf-stable, high-value, and lightweight products.
+Smart storage systems
+Smart storage integrates IoT sensors, AI, and data analytics to monitor environmental factors like temperature, humidity, and gas composition in real time.
+Automated grading and sorting
+This technology uses computer vision, sensors, and AI to sort produce based on size, color, quality, and defects. 
+INNOVATION
+WASTE REDUCTION
+VALUE ADDITION
+Cold Chain
+Prevents spoilage, extends shelf life
+Allows storage for beter market prices
+Dehydration/Freeze-Drying
+Converts perishable to long-term stable food
+Creates high-value, lightweight products
+Smart Storage
+Real-time monitoring prevents loss
+Optimizes inventory, reduces waste
+Automated Storage
+Reduces manual, inefficient sorting
+Segments produce for higher market value
+Figure 2. Summary of benefits in Processing Innovation
+Modern processing technologies extend shelf life and improve food safety (Thakur et al., 2023) and value-added processing enables farmers to capture higher margins compared to selling raw produce.
+Packaging Innovation
+Packaging serves protective, marketing, and sustainability purposes. Recent innovations include:
+Biodegradable packaging
+Plant-based materials, such as those derived from agricultural waste (e.g., wheat straw, sugarcane) and fungi (mycelium), are being used as sustainable alternatives to Styrofoam and petroleum-based plastics.
+Modified atmosphere packaging
+Modern MAP integrates with smart sensors to detect oxygen, carbon dioxide, or humidity levels. These active systems can extend the shelf life of fresh produce and meat by 50–200%, significantly reducing food waste.
+Examples include root-crop based snacks (taro, camote, cassava, banana chips) can significantly extend shelf life by reducing oxidation and moisture  ingress.
+Smart packaging with QR traceability
+These tools are increasingly used for direct-to-consumer marketing, providing interactive experiences, recycling instructions, and personalized content. (e.g., Northern Samar farmers supply rice grain to the National Food Authority (NFA) under local sourcing, indicating an organized production network). 
+Recyclable materials
+There is a major shift toward mono-material packaging, which uses a single type of material to simplify recycling, as mandated by new regulations like the EU Packaging and Packaging Waste Regulation (PPWR). Example include packaging for abaca fiber and abaca-based consumer goods (e.g., bags mats) could use recyclable paperboard, craft bags, or biodegradable bags.
+Sustainable packaging strengthens brand image and meets environmental regulations (Galati et al., 2024).
+Product Differentiation Strategies
+Differentiation helps agribusinesses compete beyond price. Strategies include:
+Organic certification
+Acts as a signal of quality, sustainability, and health, allowing producers to access premium markets and secure higher prices.
+Geographic indication labeling
+GIs connect a product's unique quality, reputation, or characteristics to its specific, protected, and often traditional, geographical origin (e.g., Champagne, Kalamata olive oil).
+Nutritional enhancement
+Enhancing products, such as biofortifying crops with essential nutrients or creating "functional foods" (e.g., fortified margarine, omega-3 products)
+Premium branding
+Developing a strong brand identity through storytelling, superior packaging, or specific product claims.
+Ethical sourcing claims
+Consumers are increasingly willing to pay more for products that carry verified ethical, social, or environmental claims (e.g., fair trade, carbon-neutral production, or locally sourced food)
+Differentiation increases willingness to pay and customer loyalty.
+Role of Technology in Innovation
+Digital agriculture tools such as AI-based crop monitoring and IoT-enabled storage systems improve product consistency and traceability (Akridge et al., 2026).
+Traceability enhances consumer trust, particularly in export markets.
+Innovation Challenges
+Agribusiness innovation faces constraints such as:
+High capital requirements
+Limited technical knowledge
+Regulatory compliance
+Market acceptance risk
+However, innovation remains essential for long-term competitiveness.
+References:
+Akridge, J. T., et al. (2026). Agribusiness management (7th ed.). Routledge.
+Galati, A., Fiore, M., Thrassou, A., & Vrontis, D. (Eds.). (2024). Agribusiness innovation and contextual evolution. Palgrave Macmillan.
+Thakur, S., Wasnik, S. B., Sharma, P., Kush, B., & Nelson, R. (2023). Innovative strategies in agribusiness management. Elite Publishing House.
+__________________________________________________________________
+3.3 PRICING STRATEGIES FOR AGRIBUSINESS PRODUCTS
+Assigned Presenters:     Randel Nel Junian
+                                         Stephanie Joy Argenio
+Importance of Pricing in Agribusiness
+Pricing determines profitability, competitiveness, and market positioning. Agricultural pricing is complex due to:
+Seasonality
+    🎯 Reasons it complicates pricing:
+Harvest time oversupply 
+Off-season scarcity
+Weather dependency
+Example: Vegetable prices in wet markets rise during typhoon season due to reduced farm supply.
+Price volatility
+     🎯 Reasons it complicates pricing:
+1. Global market integration
+2. Input cost fluctuations 
+3. Speculation and trade policies
+4. Exchange rate changes
+Example: A spike in global rice prices can immediately influence domestic rice markets.
+Supply uncertainty
+🎯 Reasons it complicates pricing:
+1. Weather risks (drought, floods, typhoons)
+2. Pest and disease outbreaks
+3. Crop failure risks
+4. Limited predictability of yield consume
+Because farmers cannot perfectly predict output, it becomes difficult to set prices in advance
+Example: A pest outbreak in onion farms can suddenly reduce supply and drive prices up.
+Perishability
+🎯 Reasons it complicates pricing:
+1. Time pressure to sell
+2. Limited bargaining power
+3. Post-harvest losses
+4. Storage and transport costs
+Example: Tomato farmers may sell cheaply during peak harvest because unsold tomatoes spoil quickly.
+Strategic pricing ensures sustainability and growth (Akridge et al., 2026).
+Pricing Strategies
+Pricing strategies are methods businesses use to set the cost of their products or services to maximize profitability, market share, or brand perception.
+Key types include:
+a. Cost-Based Pricing
+Cost-based pricing adds a markup to production costs. It ensures coverage of:
+✅ Fixed costs: Expenses that remain constant regardless of production volume, such as rent, insurance, and equipment depreciation.
+✅ Variable costs: Expenses that fluctuate based on the quantity produced, including seeds, fertilizer, and direct labor.
+✅ Distribution costs: Costs associated with getting the product to the consumer, such as transportation, packaging, and marketing. 
+However, it may ignore market demand dynamics.
+b. Market-Based Pricing
+Market-based pricing depends on:
+✅ Competitor Prices: Agribusinesses must monitor the prices set by competing firms for similar products to maintain market share and avoid being significantly over- or under-priced.
+✅ Consumer Willingness to Pay: This involves assessing the maximum price customers are prepared to pay based on their perception of the product's value and their individual needs.
+✅ Demand Elasticity: This measures how sensitive consumer demand is to changes in price. Understanding elasticity helps agribusinesses decide whether lowering prices will significantly increase sales volume or if raising prices will lead to a sharp decline in demand. 
+This strategy is common in competitive produce markets.
+c. Value-Based Pricing
+Value-based pricing sets prices based on perceived value. Premium organic or specialty products often use this strategy. Differentiation supports higher margins (Galati et al., 2024).
+d. Dynamic and Supply Chain Pricing
+Recent research highlights coordinated pricing across supply chains, particularly in cooperatives (Wang et al., 2022).
+Supply chain coordination improves:
+Profit distribution
+Inventory management
+Demand forecasting
+Digital marketplaces increasingly enable dynamic pricing adjustments.
+e. Government and Policy Influence
+Agricultural pricing is often influenced by:
+💰 Subsidies: These are used to lower production costs (input subsidies for seeds/fertilizer) or support output prices directly, making farming more viable and influencing the final market price.
+📉 Minimum Support Prices (MSP): Governments set these "price floors" to protect farmers against sharp falls in agricultural prices during bumper harvest years, ensuring a guaranteed minimum profit.
+🌐 Export-Import Regulations: Trade policies like tariffs, quotas, and export taxes directly affect the domestic availability of goods, which in turn fluctuates internal pricing to match or diverge from global trends.
+🏛️ Policy Frameworks: Broader governmental strategies—including inflation control, self-sufficiency goals, and market stabilization schemes—act as the overarching structure that dictates how the other three tools are applied. 
+References:
+Akridge, J. T., et al. (2026). Agribusiness management (7th ed.). Routledge.
+Galati, A., et al. (2024). Agribusiness innovation and contextual evolution. Palgrave Macmillan.
+Wang, J., Huo, Y., Guo, X., & Xu, Y. (2022). Pricing strategy of agricultural product supply chains. Agriculture, 12(5), 732.
+__________________________________________________________________
+3.4 Distribution Channels and Partnership Building
+Assigned Presenters:   Joan Jarito
+                                     Daisyrie Recarie
+Overview of Distribution Channels
+Distribution channels connect producers and consumers. Common agribusiness channels include:
+Figure 3. Distribution Channels in Agribusiness
+Efficient channels reduce transaction costs and product losses (Akridge et al., 2026).
+Direct vs. Indirect Channels
+Source: https://www.allelcoelec.com/blog/understanding-direct-and-indirect-distribution
+Direct Channel of Distribution (Zero-Level) 
+In direct channels, the producer (farmer or agribusiness) sells directly to the end consumer, eliminating middlemen. 
+Examples: Farm stands, Farmers’ Markets, U-Pick operations, Direct-to-Consumer (DTC) websites, and roadside sales.
+Key Benefits: Higher profit margins (no middleman fees), direct feedback from customers, and full control over branding and pricing.
+Limitations: Limited reach, higher logistics, and marketing responsibility for the farmer.
+Indirect Channel of Distribution (Intermediary Channels) 
+Indirect channels involve intermediaries such as agents, brokers, wholesalers, or retailers who facilitate the movement of goods. 
+One-Level Channel: Producer ➡️ Retailer ➡️ Consumer (e.g., Farmer to local grocery store).
+Two-Level Channel: Producer ➡️ Wholesaler ➡️ Retailer ➡️ Consumer (e.g., Farmer to distributor to supermarket).
+Three-Level Channel: Producer ➡️ Agent ➡️ Wholesaler ➡️ Retailer ➡️ Consumer (Common for complex, long-distance, or export markets).
+Key Benefits: Ability to reach a wide, dispersed market, efficiency in handling large volumes, and specialized storage/transport.
+Limitations: Lower profit margins due to shared revenue, less control over the final price, and loss of direct customer relationship. 
+FEATURE
+DIRECT CHANNEL
+INDIRECT CHANNEL
+Intermediaries
+None
+Wholesalers, retailers, agents
+Control
+High
+Low
+Profit Margins
+High
+Lower
+Reach
+Local/Limited
+Broad/Mass Market
+Suitability
+Perishable, niche, smale-scale
+Large-scale, non-perishable, export
+Figure 4. Key Differences of Direct and Indirect Channel of Distribution
+Digital Distribution Systems
+E-commerce platforms and mobile applications enable:
+Farm-to-table models
+Subscription-based agriculture
+Cross-border trade
+Digital marketing enhances visibility and consumer engagement.
+Supply Chain Integration
+Supply chain integration is the coordinated management of all activities from production to delivery, ensuring that producers, processors, and distributors work together efficiently to reduce delays, waste, and costs, while meeting market demand.
+It illustrates the three main components:
+Producers - source of raw agricultural products—fruits, vegetables, rice, coconut, livestock, etc.
+            Key Activities: Planting, cultivating, harvesting, and initial handling of produce.
+Processors - Transform raw agricultural products into value-added goods, e.g., rice milling, coconut oil processing, or vegetable packaging.
+            Key Activities: Cleaning, sorting, processing, packaging, and sometimes storage.
+Distributors - Deliver processed and packaged products to retailers, markets, or export points.
+Key Activities: Transportation, storage, inventory management, and wholesale distribution.
+Retailers - are the final, consumer-facing link in the supply chain, transforming from passive buyers into active channel controllers who bridge manufacturers with end-users.
+           Key Activities: direct sourcing & procurement, value addition & packaging, technical support & training,
+Supply chain integration reduces inefficiencies and enhances quality control.
+Sustainability and Partnerships
+Sustainable sourcing and ethical partnerships improve brand image and long-term viability.
+References:
+Akridge, J. T., et al. (2026). Agribusiness management (7th ed.). Routledge.
+Galati, A., et al. (2024). Agribusiness innovation and contextual evolution. Palgrave Macmillan.
+___________________________________________________________________
+IV. SUMMARY AND KEY TAKEAWAY
+Presenter:  Francis Ian Mercado
+Unit 3 examines how agribusinesses create, deliver, and capture value in increasingly competitive and uncertain markets. The unit integrates business model development, innovation, pricing mechanisms, and distribution systems into a unified strategic framework.
+The Business Model Canvas provides the structural foundation for understanding how agribusiness enterprises operate. It enables entrepreneurs and managers to systematically map customer segments, value propositions, revenue streams, and operational structures. In modern agriculture, sustainability and digitalization are no longer optional; they are core components of competitive business models.
+Product innovation serves as a growth engine within agribusiness. Through improved processing technologies, sustainable packaging solutions, and differentiation strategies such as organic certification or branding, firms can move beyond commodity competition. Innovation enhances value creation and strengthens market positioning.
+Pricing strategies determine whether value created can be effectively captured. Agricultural pricing is complex due to seasonality, volatility, and perishability. Therefore, successful pricing requires strategic alignment with cost structures, consumer perceptions, and competitive dynamics. Coordinated supply chain pricing further enhances stability and profitability.
+Distribution channels and partnerships connect production to markets. Efficient supply chains reduce post-harvest losses, increase transparency, and improve customer satisfaction. Strategic alliances and digital platforms expand reach and resilience. Integrated supply networks are critical for long-term sustainability.
+Overall, Unit 3 emphasizes that agribusiness success depends not on isolated decisions but on strategic integration across business modeling, innovation, pricing, and distribution systems.
+___________________________________________________________________
+                     V. REFERENCES:
+Akridge, J. T., Foltz, J. C., Yeager, E. A., Brewer, B. E., & Malone, T. (2026). Agribusiness management (7th ed.). Routledge.
+Dionizi, B., & Dhora, R. (2025). Reinventing rural economies through sustainable business models. Frontiers in Sustainability.
+Osterwalder, A., & Pigneur, Y. (2010). Business model generation. Wiley.
+Galati, A., Fiore, M., Thrassou, A., & Vrontis, D. (Eds.). (2024). Agribusiness innovation and contextual evolution. Palgrave Macmillan.
+Thakur, S., Wasnik, S. B., Sharma, P., Kush, B., & Nelson, R. (2023). Innovative strategies in agribusiness management. Elite Publishing House
+Wang, J., Huo, Y., Guo, X., & Xu, Y. (2022). Pricing strategy of agricultural product supply chains. Agriculture, 12(5), 732.
+OTHERS:
+ https://www.colliers.com/en-in/news/digital-market-place-for-farming
+https://blog.invgate.com/business-model-canvas
+https://northernsamar.gov.ph/northern-samar-poised-to-bolster-rice-production-with-tao-corporation-hybrid-rice-farming
+https://www.allelcoelec.com/blog/understanding-direct-and-indirect-distribution
