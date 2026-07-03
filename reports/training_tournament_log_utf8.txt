@@ -1,0 +1,29 @@
+﻿≡ƒñû CyberFlow IDS - Local Model Tournament initialized.
+≡ƒôé Loading sampled dataset from: C:\Users\user\cyberflow_ids\data\processed\sampled_traffic.csv...
+   Successfully loaded 126038 rows with 54 raw attributes.
+≡ƒôè Re-mapped target label distribution: {0: 104764, 1: 21274} (0: Benign, 1: Attack)
+
+≡ƒöì Scanning feature space for data leakage or target proxies...
+Γ£à No direct linear leakage columns found in numeric feature space.
+
+ΓÜÖ∩╕Å Isolated 51 numeric threat features for training.
+≡ƒôè Dataset split: 100830 training records, 25208 validation records.
+≡ƒöä Standardizing threat vectors via StandardScaler...
+≡ƒÆ╛ Feature Scaler saved to C:\Users\user\cyberflow_ids\models\scaler.joblib
+
+ΓÜö∩╕Å Model Tournament Combat Phase Starting...
+
+-------------------------------------------------------------------------------------
+Model Name         | Accuracy   | Precision  | Recall     | F1-Score   | Train Time
+-------------------------------------------------------------------------------------
+Decision Tree      | 0.9921     | 0.9889     | 0.9643     | 0.9764     | 1.98s
+Random Forest      | 0.9943     | 0.9945     | 0.9716     | 0.9829     | 1.42s
+XGBoost            | 0.9956     | 0.9910     | 0.9826     | 0.9868     | 2.59s
+Naive Bayes        | 0.6422     | 0.3181     | 0.9793     | 0.4803     | 0.16s
+-------------------------------------------------------------------------------------
+
+≡ƒÅå CHAMPION CROWNED: XGBOOST (F1-Score: 0.9868)
+≡ƒÆ╛ Champion model successfully compiled and saved to C:\Users\user\cyberflow_ids\models\intrusion_detector.joblib!
+
+≡ƒôè Generating model performance comparison visualization...
+≡ƒôê SUCCESS! Performance comparison chart saved to: C:\Users\user\cyberflow_ids\reports\model_comparison.png

@@ -1,0 +1,62 @@
+[
+  {
+    "feature": "Bwd Packet Length Std",
+    "mean_abs_shap": 0.03097980814541561
+  },
+  {
+    "feature": "Bwd Packet Length Mean",
+    "mean_abs_shap": 0.025235739048725933
+  },
+  {
+    "feature": "Packet Length Variance",
+    "mean_abs_shap": 0.023401938913000096
+  },
+  {
+    "feature": "Fwd Packet Length Max",
+    "mean_abs_shap": 0.018047698135308717
+  },
+  {
+    "feature": "Packet Length Std",
+    "mean_abs_shap": 0.017524772049226468
+  },
+  {
+    "feature": "Average Packet Size",
+    "mean_abs_shap": 0.01738327978496635
+  },
+  {
+    "feature": "Max Packet Length",
+    "mean_abs_shap": 0.01672918188563716
+  },
+  {
+    "feature": "Packet Length Mean",
+    "mean_abs_shap": 0.0130046055416908
+  },
+  {
+    "feature": "Fwd Packet Length Mean",
+    "mean_abs_shap": 0.01227538345501044
+  },
+  {
+    "feature": "Init_Win_bytes_backward",
+    "mean_abs_shap": 0.011218968844018162
+  },
+  {
+    "feature": "Bwd Packet Length Max",
+    "mean_abs_shap": 0.0105862366356057
+  },
+  {
+    "feature": "Bwd Header Length",
+    "mean_abs_shap": 0.009159545938451846
+  },
+  {
+    "feature": "Total Length of Fwd Packets",
+    "mean_abs_shap": 0.008772619744433052
+  },
+  {
+    "feature": "Fwd IAT Std",
+    "mean_abs_shap": 0.0066096039683521375
+  },
+  {
+    "feature": "PSH Flag Count",
+    "mean_abs_shap": 0.006597844076549085
+  }
+]

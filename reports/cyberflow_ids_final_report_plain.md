@@ -1,4 +1,4 @@
-# CyberFlow IDS Final Report
+﻿# CyberFlow IDS Final Report
 
 ## Cover Page
 
@@ -14,7 +14,7 @@
 
 **Repository Link:** https://github.com/RaulGacusan748/cyberflow_ids
 
-**Google Colab Link:** https://colab.research.google.com/github/RaulGacusan748/cyberflow_ids/blob/main/notebooks/cyberflow_ids_tournament.ipynb
+**Google Colab Link:** [Paste your shareable Colab URL here]
 
 ---
 
@@ -42,10 +42,6 @@ This project proposes an end-to-end IDS pipeline named CyberFlow IDS, designed t
 - Compare candidate classifiers in a tournament framework.
 - Validate the selected model on held-out traffic data.
 - Demonstrate practical usability through dashboard and replay simulation.
-
-Primary business KPIs for this capstone are: reduction in false-positive SOC alerts, reduction in analyst triage time, and improved incident response speed through low-latency model inference.
-
-Capstone linkage: this Module 1 output maps directly to Capstone Steps 1-3 by establishing the problem framing, task definition, and target success metrics.
 
 ---
 
@@ -150,58 +146,21 @@ The live replay engine successfully loaded serialized artifacts and executed pac
 
 ---
 
-## 9. Bias and Fairness Analysis
-
-### 9.1 Ethical AI Framing
-
-CyberFlow IDS is a safety-critical classification system used for triage support in a SOC context. Ethical deployment requires balancing false negatives (missed attacks) and false positives (alert fatigue), because both can create harmful operational outcomes.
-
-### 9.2 Explainability and Decision Transparency
-
-Model behavior was interpreted using SHAP-based explainability artifacts generated from the trained tournament pipeline:
-- `reports/shap_summary_top20.png`
-- `reports/shap_bar_top20.png`
-- `reports/shap_top_features.json`
-
-These outputs show that packet length dispersion and backward-flow packet statistics were among the strongest contributors to threat predictions, improving transparency for analyst review.
-
-### 9.3 Bias Risk Review
-
-Potential bias sources identified:
-- **Class imbalance bias:** Benign traffic dominates attack traffic in sampled distributions, which can bias models toward majority predictions if not monitored.
-- **Dataset-origin bias:** CIC-IDS-2017-derived traffic may not represent all modern production environments.
-- **Temporal and infrastructure bias:** Traffic characteristics can drift over time or differ by network topology, leading to uneven performance across environments.
-
-### 9.4 Fairness and Reliability Checks Applied
-
-The following controls were used to reduce unfair or misleading model behavior:
-- Stratified train/test split to preserve class proportions.
-- Leakage shield (`|r| > 0.98`) to remove proxy features that can inflate performance unfairly.
-- Constant-feature removal and preprocessing consistency between training and inference.
-- Multi-model tournament comparison to avoid dependence on a single modeling assumption.
-
-### 9.5 Remaining Gaps and Mitigation Plan
-
-Current limitations:
-- No subgroup fairness labels (e.g., per user demographics) exist in this network dataset, so classical demographic fairness metrics cannot be computed directly.
-- Fairness is therefore assessed operationally through stability, explainability, and error-balance monitoring.
-
-Recommended mitigation actions:
-1. Add periodic drift and recalibration checks across new capture windows.
-2. Track class-wise error rates over time (especially false negatives on minority attack classes).
-3. Expand evaluation using additional datasets and deployment-like traffic traces.
-4. Establish a human-in-the-loop override policy for high-impact blocking decisions.
-
-### 9.6 Step 5 Deliverable Statement
-
-This section fulfills the **Bias and Fairness Analysis** requirement by documenting explainability artifacts, identified bias risks, applied fairness controls, and mitigation governance for deployment.
-
----
-
-## 10. Conclusion and Future Work
+## 9. Conclusion and Future Work
 
 CyberFlow IDS demonstrates an operational machine learning IDS workflow from data preparation to deployable inference components. Future work can include online learning, drift monitoring, and broader benchmark datasets.
 
+---
+
+## References
+
+[Insert your finalized bibliography in the required citation style.]
 
 ---
+
+## Appendix (Optional)
+
+- Terminal logs excerpt
+- Architecture diagram
+- Additional evaluation charts
 

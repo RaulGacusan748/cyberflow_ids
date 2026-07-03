@@ -1,0 +1,17 @@
+﻿Portal Ready Checklist
+
+1) Click Start Assignment in your LMS page.
+2) Upload response documents (PDF/PPTX approved):
+   - *_Technical_Source_Code.pdf
+   - *_Final_Report.pdf
+   - *_Technical_Presentation.pptx
+   - *_Business_Presentation.pptx
+   - (Use the rebuilt PPTX decks, not the earlier one-page PDFs.)
+3) Upload coding files as required:
+   - *_Raw_Python_Code.zip (if zip allowed)
+   - or individual *_model_training_tournament.py, *_dashboard.py, *_live_detector.py
+4) Upload supporting files if requested by rubric:
+   - *_EDA_Feature_Engineering_Report.md
+   - *_Deployment_MLOps_Guide.md
+   - *_Generative_AI_Usage.md
+5) Click Submit Assignment.

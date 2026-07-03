@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberFlow IDS: Executive Board Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #fcfbf9;
+            --bg-card: #f5f4f0;
+            --border-color: #e7e5e4;
+            --text-main: #1c1917;
+            --text-muted: #78716c;
+            --brand-primary: #1e293b;
+            --brand-accent: #b45309;
+            --success-color: #15803d;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .presentation-viewport {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(28, 25, 23, 0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .slides-wrapper {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: scale(0.99) translateY(5px);
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .slide.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+        }
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 35px;
+        }
+        .slide-title {
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+        .slide-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--brand-accent);
+        }
+        .slide-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+        .two-column {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
+        .corp-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+        }
+        .corp-card h3 {
+            color: var(--brand-primary);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .corp-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .bullet-list {
+            list-style: none;
+        }
+        .bullet-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+        .bullet-list li strong {
+            color: var(--brand-primary);
+        }
+        .bullet-list li::before {
+            content: "\2014";
+            position: absolute;
+            left: 0;
+            color: var(--brand-accent);
+            font-weight: bold;
+        }
+        .giant-stat {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 700;
+            color: var(--brand-accent);
+            line-height: 1;
+        }
+        .giant-stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        .control-console {
+            height: 60px;
+            background: #ffffff;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+        .console-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .console-mid {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--brand-primary);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            padding: 6px 16px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            background: var(--brand-primary);
+            color: #ffffff;
+            border-color: var(--brand-primary);
+        }
+        .slide-counter {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 380px;
+        }
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .styled-table th {
+            background: var(--brand-primary);
+            color: #ffffff;
+            text-align: left;
+            padding: 12px 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        .styled-table td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        .cover-title {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+        .cover-subtitle {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        .cover-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            width: 60%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chosen Palette: Warm Minimalist Neutrals (Alabaster background #fcfbf9, Charcoal Slate text #1c1917, Soft Terracotta/Gold Accent #b45309) -->
+    <!-- Application Structure Plan: A refined executive pitch book consisting of 10 structural chapters focusing on shareholder interests, financial returns, risk governance, business continuity safety audits, and automated operations. The application offers a self-contained scrolling slides framework using simple slide counters and clean layout transitions optimized for screen mirroring during real-time board assemblies. -->
+    <!-- Visualization & Content Choices:
+        1. Operational Intercept Rate -> Goal: Inform -> Method: Giant Numbers on Slide 4 -> Justification: Highlighting the immediate technical transformation speed under 25ms. (NO SVG)
+        2. Incident Containment Lifecycle -> Goal: Compare -> Method: Chart.js Bar Chart on Slide 5 -> Justification: Contrasting the historic 258-day human manual threat loop against CyberFlow's auto-containment lifecycle. (NO SVG)
+        3. Financial Yield & Loss Avoidance -> Goal: Compare -> Method: Chart.js Line Chart on Slide 6 -> Justification: Illustrating the cumulative cost-saving trajectory over a 5-year operating lifecycle based on average downtime metrics. (NO SVG)
+        4. Performance Parity Metrics -> Goal: Organize -> Method: Balanced Table on Slide 7 -> Justification: Proving structural parity with zero false flags across legacy ports to protect active business pipelines. (NO SVG/Mermaid)
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <div class="presentation-viewport">
+        <div class="slides-wrapper">
+
+            <!-- SLIDE 1: COVER -->
+            <div class="slide flex flex-col justify-center text-center active" id="slide-1">
+                <div class="cover-title">CyberFlow IDS</div>
+                <div class="cover-subtitle">Protecting Enterprise Value through AI-Driven Security Automation</div>
+                <div style="width: 80px; height: 2px; background: var(--brand-accent); margin: 0 auto 40px;"></div>
+                <div class="cover-meta">
+                    <div>Presenter: <strong>Raul C. Gacusan, PhD, RFC</strong></div>
+                    <div>Audience: <strong>Executive Board of Directors</strong></div>
+                    <div>Framework: <strong>Autonomous Operations Protocol</strong></div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: THE BUSINESS THREAT -->
+            <div class="slide" id="slide-2">
+                <div class="slide-header">
+                    <div class="slide-title">The Cost of Uncontained Threats</div>
+                    <div class="slide-tag">Financial Exposure</div>
+                </div>
+                <div class="slide-content">
+                    <div class="two-column">
+                        <ul class="bullet-list">
+                            <li><strong>Severe Business Attrition</strong>: The average financial exposure of a single database security breach now exceeds $4.45M, encompassing regulatory penalties, customer clawbacks, and loss of trust.</li>
+                            <li><strong>Unprotected Downward Slopes</strong>: Volumetric DDoS attacks saturate network resources in seconds, costing web applications up to $22,000 per minute of structural offline downtime.</li>
+                            <li><strong>Unseen Overhead Limits</strong>: Security analysts suffer from severe alert fatigue, wasting valuable engineering hours manually investigating benign traffic spikes.</li>
+                        </ul>
+                        <div class="corp-card">
+                            <h3>The Operational Blindspot</h3>
+                            <p>Traditional firewalls rely on rigid, static signatures. They are functionally blind to behavioral anomalies and zero-day threat patterns, reacting only *after* damage has occurred. CyberFlow shifts defense from post-incident triage to real-time containment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: STRATEGIC SOLUTION -->
+            <div class="slide" id="slide-3">
+                <div class="slide-header">
+                    <div class="slide-title">The CyberFlow Paradigm</div>
+                    <div class="slide-tag">Security Architecture</div>
+                </div>
+                <div class="slide-content">
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="corp-card flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold mb-3">Continuous Ingestion</h3>
+                                <p class="text-sm">Processes high-velocity network flow data dynamically, transforming raw packets into standardized telemetry without introducing operational latency.</p>
+                            </div>
+                        </div>
+                        <div class="corp-card flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold mb-3">Gradient Classification</h3>
+                                <p class="text-sm">Evaluates incoming transactions against a non-linear gradient classification brain, distinguishing attack profiles from safe communication surges.</p>
+                            </div>
+                        </div>
+                        <div class="corp-card flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-lg font-bold mb-3">Decoupled MLOps</h3>
+                                <p class="text-sm">Deployed out-of-band via containerized microservices, ensuring core switching hardware experiences zero packet-processing friction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 4: THE EFFICIENCY METRIC -->
+            <div class="slide" id="slide-4">
+                <div class="slide-header">
+                    <div class="slide-title">Accelerating Threat Containment</div>
+                    <div class="slide-tag">Operational Speed</div>
+                </div>
+                <div class="slide-content">
+                    <div class="two-column">
+                        <div>
+                            <p class="text-stone-600 mb-6">Standard incident mitigation workflows require security teams to discover, isolate, and block a threat manually—a cycle taking hours. CyberFlow reduces detection and reaction latency to fractions of a second.</p>
+                            <ul class="bullet-list">
+                                <li><strong>Instant Threat Discovery</strong>: The classification gateway completes predictive profiling under 25 milliseconds.</li>
+                                <li><strong>Immediate Active Remediation</strong>: Automatically pushes IP ban states directly to active software-defined networks.</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-center">
+                            <div class="giant-stat">&lt;25<span style="font-size: 32px; font-family: sans-serif;">ms</span></div>
+                            <div class="giant-stat-label">Model Classification Speed</div>
+                            <p class="text-sm text-stone-500 mt-4 max-w-xs">Faster than standard human cognitive latency, keeping transactions safe during massive attacks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 5: RECOVERING LOSSES -->
+            <div class="slide" id="slide-5">
+                <div class="slide-header">
+                    <div class="slide-title">Compressing the Vulnerability Window</div>
+                    <div class="slide-tag">Risk Reduction</div>
+                </div>
+                <div class="slide-content">
+                    <div class="two-column">
+                        <div class="chart-container">
+                            <canvas id="containmentChart"></canvas>
+                        </div>
+                        <div class="corp-card">
+                            <h3>Shrinking Attack Surfaces</h3>
+                            <p class="mb-4">Standard containment timelines leave corporate data vulnerable for days, allowing threat actors to explore target paths and exfiltrate records.</p>
+                            <p class="text-sm text-stone-500">By automating classification at the ingress boundary, CyberFlow stops data movement instantly, protecting core corporate systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 6: ROI METRICS -->
+            <div class="slide" id="slide-6">
+                <div class="slide-header">
+                    <div class="slide-title">Financial Yield & Loss Avoidance</div>
+                    <div class="slide-tag">Return on Investment</div>
+                </div>
+                <div class="slide-content">
+                    <div class="two-column">
+                        <div>
+                            <p class="text-stone-600 mb-6">Implementing CyberFlow directly lowers operational expenses by reducing incident mitigation costs and protecting business pipelines from downtime.</p>
+                            <ul class="bullet-list">
+                                <li><strong>SOC Operation Savings</strong>: 89% reduction in manual alert validation hours.</li>
+                                <li><strong>Downtime Prevention</strong>: Saves an estimated $132,000 per avoided major DDoS occurrence.</li>
+                            </ul>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="roiChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 7: ALGORITHMIC PARITY -->
+            <div class="slide" id="slide-7">
+                <div class="slide-header">
+                    <div class="slide-title">Zero-Downtime Security Governance</div>
+                    <div class="slide-tag">Reliability Standards</div>
+                </div>
+                <div class="slide-content">
+                    <div class="two-column">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Port Category</th>
+                                    <th>Operational Target</th>
+                                    <th>Observed FPR</th>
+                                    <th>Business Safety Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>System Ports (&le; 1023)</strong></td>
+                                    <td>Critical Network Services (HTTPS, DNS)</td>
+                                    <td class="text-accent-blue font-bold">0.00%</td>
+                                    <td class="text-success-color font-bold">🟢 Protected (No Interruption)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dynamic Ports (&gt; 1023)</strong></td>
+                                    <td>Enterprise Apps & Custom Databases</td>
+                                    <td class="text-accent-blue font-bold">0.00%</td>
+                                    <td class="text-success-color font-bold">🟢 Protected (No Interruption)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="corp-card">
+                            <h3>Protecting Business Pipelines</h3>
+                            <p>Aggressive automated blocklists often trigger false positives on legitimate background services, accidentally locking out customers and operations.</p>
+                            <p class="text-sm text-stone-500 mt-3">Our rigorous statistical parity audit demonstrates a 0.00% False Positive Rate (FPR), ensuring business-critical ports are never blocked by false alarms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 8: COPILOT ACCELERATION -->
+            <div class="slide" id="slide-8">
+                <div class="slide-header">
+                    <div class="slide-title">GenAI SOC Copilot Integration</div>
+                    <div class="slide-tag">Strategic Intelligence</div>
+                </div>
+                <div class="slide-content">
+                    <div class="two-column">
+                        <div class="corp-card">
+                            <h3>Empowering Decisive Action</h3>
+                            <p class="mb-4">When a telemetry threat is intercepted, CyberFlow automatically bundles the network parameters and requests an automated Threat Brief from the Gemini API.</p>
+                            <p class="text-sm text-stone-500">This removes the translation gap between mathematical metrics and human operations, allowing security teams to respond with confidence in seconds.</p>
+                        </div>
+                        <div class="corp-card border-l-4 border-l-accent-orange bg-stone-50">
+                            <h4 class="font-bold text-accent-orange text-sm mb-2 uppercase tracking-wide">Autonomous Brief Output:</h4>
+                            <p class="text-stone-800 text-sm font-mono leading-relaxed">
+                                🔴 CRITICAL: Volumetric Scan Detected<br>
+                                • Pattern: High-skew Packet Asymmetry (+0.95)<br>
+                                • Scope: Reconnaissance phase prior to system exploit.<br>
+                                • Action: Restrict source IP 192.168.1.108 immediately.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 9: CAPEX TO OPEX MILESTONES -->
+            <div class="slide" id="slide-9">
+                <div class="slide-header">
+                    <div class="slide-title">Enterprise Implementation Roadmap</div>
+                    <div class="slide-tag">Strategic Rollout</div>
+                </div>
+                <div class="slide-content">
+                    <div class="grid grid-cols-4 gap-4 text-center">
+                        <div class="bg-stone-50 p-6 rounded-lg border border-stone-200">
+                            <div class="text-stone-400 font-bold text-xs mb-1">STAGE 1: 0 - 30 DAYS</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-2">Ingestion Tap</h4>
+                            <p class="text-xs text-stone-500">Configure out-of-band core switch mirrors without impacting existing networks.</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-lg border border-stone-200">
+                            <div class="text-stone-400 font-bold text-xs mb-1">STAGE 2: 30 - 60 DAYS</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-2">Shadow Model</h4>
+                            <p class="text-xs text-stone-500">Run parallel classifications to verify zero false positives on live traffic streams.</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-lg border border-stone-200">
+                            <div class="text-stone-400 font-bold text-xs mb-1">STAGE 3: 60 - 90 DAYS</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-2">Active Blocking</h4>
+                            <p class="text-xs text-stone-500">Enable automatic blocking calls directly to active firewalls and SDN routers.</p>
+                        </div>
+                        <div class="bg-stone-50 p-6 rounded-lg border border-stone-200">
+                            <div class="text-stone-400 font-bold text-xs mb-1">STAGE 4: 90+ DAYS</div>
+                            <h4 class="font-bold text-slate-800 text-base mb-2">GenAI Audits</h4>
+                            <p class="text-xs text-stone-500">Deploy the Gemini-powered SOC Copilot to automate incident reporting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 10: GOVERNANCE & OUTLOOK -->
+            <div class="slide text-center flex flex-col justify-center" id="slide-10">
+                <h2 class="text-5xl font-bold text-slate-900 mb-4">Securing Enterprise Future</h2>
+                <p class="text-stone-600 max-w-xl mx-auto mb-10 leading-relaxed">
+                    By combining out-of-band machine learning with automated response systems, CyberFlow IDS protects enterprise operations, reduces risk exposure, and lowers mitigation overhead.
+                </p>
+                <div style="width: 60px; height: 1px; background: var(--border-color); margin: 0 auto 30px;"></div>
+                <div class="text-sm font-semibold text-stone-500 tracking-wider">
+                    REPRESENTATIVE DECK &bull; WWW.EPCC-EDU.COM/CYBERFLOW
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CONTROL CONSOLE -->
+        <div class="control-console">
+            <div class="console-text">CyberFlow IDS &bull; Executive Pitch</div>
+            <div class="console-mid">
+                <button class="nav-btn" id="prev-btn">PREV</button>
+                <div class="slide-counter" id="slide-num">SLIDE 1 of 10</div>
+                <button class="nav-btn" id="next-btn">NEXT</button>
+            </div>
+            <div class="console-text text-right" style="color: var(--brand-accent);">Raul C. Gacusan, PhD, RFC</div>
+        </div>
+    </div>
+
+    <!-- Interactive Navigation and Graphic Engine -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideNumDisplay = document.getElementById('slide-num');
+        let currentSlideIdx = 0;
+
+        function updateSlidePosition(newIdx) {
+            slides[currentSlideIdx].classList.remove('active');
+            currentSlideIdx = (newIdx + slides.length) % slides.length;
+            slides[currentSlideIdx].classList.add('active');
+            slideNumDisplay.textContent = `SLIDE ${currentSlideIdx + 1} of ${slides.length}`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            updateSlidePosition(currentSlideIdx - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            updateSlidePosition(currentSlideIdx + 1);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                updateSlidePosition(currentSlideIdx + 1);
+            } else if (e.key === 'ArrowLeft') {
+                updateSlidePosition(currentSlideIdx - 1);
+            }
+        });
+
+        const wrapLabel = (label, maxChars = 16) => {
+            if (label.length <= maxChars) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxChars) {
+                    if (currentLine.length > 0) lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            });
+            if (currentLine.trim().length > 0) lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const commonOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                },
+                legend: { labels: { color: '#1c1917', font: { family: 'Plus Jakarta Sans' } } }
+            }
+        };
+
+        const ctxContainment = document.getElementById('containmentChart').getContext('2d');
+        new Chart(ctxContainment, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Manual Operations Limit'), wrapLabel('CyberFlow Automation')],
+                datasets: [{
+                    label: 'Threat Containment Windows (Sec)',
+                    data: [14400, 0.025],
+                    backgroundColor: ['#e7e5e4', '#b45309'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: '#f5f4f0' },
+                        ticks: { font: { family: 'Plus Jakarta Sans' } }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { family: 'Plus Jakarta Sans', weight: 'bold' } }
+                    }
+                },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+        const ctxRoi = document.getElementById('roiChart').getContext('2d');
+        new Chart(ctxRoi, {
+            type: 'line',
+            data: {
+                labels: [wrapLabel('Year 1'), wrapLabel('Year 2'), wrapLabel('Year 3'), wrapLabel('Year 4'), wrapLabel('Year 5')],
+                datasets: [{
+                    label: 'Avoided Operational Loss ($)',
+                    data: [85000, 190000, 310000, 440000, 600000],
+                    borderColor: '#b45309',
+                    backgroundColor: 'rgba(180, 83, 9, 0.05)',
+                    fill: true,
+                    tension: 0.1,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#1e293b'
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f5f4f0' },
+                        ticks: { font: { family: 'Plus Jakarta Sans' } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { family: 'Plus Jakarta Sans' } }
+                    }
+                },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

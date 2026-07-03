@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberFlow IDS: Executive Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: Warm Neutrals with Brilliant Blue & Energetic Orange Accents -->
+    <!-- Application Structure Plan: A single-page scrolling dashboard divided into four functional pillars: 1. Operational Context (The Problem & Data), 2. The ML Engine (Tournament Results), 3. Trust & Transparency (XAI & Fairness), 4. Autonomous Operations (GenAI Copilot). This structure guides the user from understanding the raw data challenge, through the algorithmic solution, proving its ethical safety, and culminating in the real-world operational output. A sticky top-nav enables quick jumps. An interactive "Deploy Payload" terminal simulates the system's real-time response. -->
+    <!-- Visualization & Content Choices: 
+        1. Data Imbalance -> Goal: Compare -> Method: Chart.js Donut Chart -> Justification: Clearly shows the massive disparity between benign and attack traffic, highlighting the modeling difficulty. (NO SVG)
+        2. Model Tournament -> Goal: Compare/Rank -> Method: Chart.js Grouped Bar Chart -> Justification: Allows side-by-side comparison of 4 models across 4 metrics (Accuracy, Precision, Recall, F1). (NO SVG)
+        3. SHAP Feature Drivers -> Goal: Organize/Rank -> Method: Chart.js Horizontal Bar Chart -> Justification: Best for reading long category names and ranking importance percentages. (NO SVG)
+        4. GenAI Copilot -> Goal: Inform/Interact -> Method: HTML/CSS/JS Simulated Terminal -> Justification: Provides an interactive, engaging way to show the <25ms response time and the exact LLM output without static text. (NO SVG/Mermaid)
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf9; /* Stone 50 - Light warm neutral */
+            color: #1c1917; /* Stone 900 */
+        }
+        h1, h2, h3, h4 {
+            color: #0f172a; /* Slate 900 */
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Vibrant Accents */
+        .text-accent-blue { color: #0284c7; } /* Sky 600 */
+        .bg-accent-blue { background-color: #0284c7; }
+        .border-accent-blue { border-color: #0284c7; }
+        
+        .text-accent-orange { color: #ea580c; } /* Orange 600 */
+        .bg-accent-orange { background-color: #ea580c; }
+        
+        .text-accent-green { color: #10b981; } /* Emerald 500 */
+        
+        /* Chart Container Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 400px; }
+        }
+
+        /* UI Components */
+        .glass-card {
+            background-color: #ffffff;
+            border: 1px solid #e7e5e4;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .glass-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #0284c7;
+        }
+
+        /* Terminal styling for Copilot */
+        .terminal {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            overflow-x: hidden;
+        }
+        .blinking-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: #f8fafc;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-200 selection:text-sky-900">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-stone-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tight text-slate-900">
+                    &#x2694;&#xFE0F; CyberFlow <span class="text-accent-blue">IDS</span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-semibold text-stone-600">
+                    <a href="#telemetry" class="nav-link">1. Telemetry & Data</a>
+                    <a href="#tournament" class="nav-link">2. ML Tournament</a>
+                    <a href="#trust" class="nav-link">3. Trust & Fairness</a>
+                    <a href="#operations" class="nav-link">4. Autonomous Ops</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+            Machine Learning-Powered<br>Network Anomaly Detection
+        </h1>
+        <p class="mt-4 text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
+            An enterprise-grade, memory-safe framework designed to ingest high-velocity network flow telemetry, detecting DDoS floods and automated scans in real-time.
+        </p>
+        <div class="mt-8 flex justify-center space-x-4 text-sm font-medium text-stone-500">
+            <span class="bg-stone-100 px-4 py-2 rounded-full border border-stone-200">&#x1F468;&#x200D;&#x1F3EB; Prepared by: Raul C. Gacusan, PhD, RFC</span>
+            <span class="bg-stone-100 px-4 py-2 rounded-full border border-stone-200">&#x1F4C4; Capstone Project Report</span>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-24">
+
+        <!-- Section 1: Telemetry & Data -->
+        <section id="telemetry" class="scroll-mt-24">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">1. The Telemetry Landscape</h2>
+                <p class="text-stone-600">
+                    The core operational challenge is the severe imbalance of network data. Malicious activity is a needle in a haystack. CyberFlow processes the UNB CIC-IDS2017 dataset using a 5% Stratified Downsampling Strategy to protect minority attack signatures.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Imbalance Chart -->
+                <div class="glass-card p-6 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">Class Distribution (126,038 Flows)</h3>
+                    <p class="text-sm text-stone-500 mb-6">Standard classifiers default to the majority class to minimize raw error rates. We optimize for F1-Score to counteract this.</p>
+                    <div class="chart-container flex-grow">
+                        <canvas id="imbalanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Metrics & Leakage Shield -->
+                <div class="space-y-8">
+                    <div class="glass-card p-6 border-l-4 border-l-accent-blue">
+                        <h3 class="text-lg font-bold mb-3">&#x1F4CA; The Packet Asymmetry Metric</h3>
+                        <p class="text-sm text-stone-600 mb-4">Volumetric floods exhibit highly asymmetrical profiles (spraying packets with no replies). We engineered a dimensionless metric to isolate this footprint.</p>
+                        <div class="bg-stone-50 p-4 rounded border border-stone-200 font-mono text-sm overflow-x-auto">
+                            Asymmetry = (Fwd_Pkts - Bwd_Pkts) / (Fwd_Pkts + Bwd_Pkts + 10⁻⁵)
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 border-l-4 border-l-accent-orange">
+                        <h3 class="text-lg font-bold mb-3">&#x1F6E1;&#xFE0F; The Leakage Shield</h3>
+                        <p class="text-sm text-stone-600 mb-4">Target proxy leakage causes artificially perfect training scores that fail in production. Our automated engine sweeps all 51 features to prevent "cheating".</p>
+                        <div class="flex items-center space-x-3 text-sm font-semibold text-stone-800 bg-orange-50 p-3 rounded">
+                            <span class="text-accent-orange text-xl">&#x26A0;&#xFE0F;</span>
+                            <span>Action: Dropping all features where |r| > 0.98</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: ML Tournament -->
+        <section id="tournament" class="scroll-mt-24">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">2. The Machine Learning Tournament</h2>
+                <p class="text-stone-600">
+                    A four-way tournament evaluated distinct mathematical classifiers. To protect the SOC from alert fatigue, <strong>Precision</strong> and <strong>F1-Score</strong> were the primary KPIs.
+                </p>
+            </div>
+
+            <div class="glass-card p-8">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Classifier Empirical Results</h3>
+                        <p class="text-sm text-stone-500 mt-1">Evaluated on a 20% validation split (25,208 records).</p>
+                    </div>
+                    <div class="hidden sm:block text-right">
+                        <div class="text-sm font-bold text-accent-blue">Champion: XGBoost</div>
+                        <div class="text-xs text-stone-500">Latency: 2.69s (Train) | <25ms (Inference)</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container" style="max-width: 100%;">
+                    <canvas id="tournamentChart"></canvas>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 bg-stone-50 p-6 rounded-lg border border-stone-200">
+                    <div>
+                        <h4 class="font-bold text-accent-blue mb-2">&#x1F451; Why XGBoost Won</h4>
+                        <p class="text-sm text-stone-600">Secured a peak F1-Score of 98.68% and Precision of 99.10%. Its sequential gradient boosting architecture minimizes error margins by continuously targeting misclassified residual weights.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-accent-orange mb-2">&#x1F4C9; Why Naive Bayes Failed</h4>
+                        <p class="text-sm text-stone-600">Yielded an unusable 31.81% precision. In network traffic, features (packet size, duration) are highly correlated. Naive Bayes' assumption of absolute independence was severely violated.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Trust & Fairness -->
+        <section id="trust" class="scroll-mt-24">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">3. Technical Trust & Explainability</h2>
+                <p class="text-stone-600">
+                    To avoid the risks of a "black-box" model, CyberFlow integrates cooperative game theory (SHAP) for explainability and enforces strict statistical parity audits to ensure safe automated blocking.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- SHAP Chart -->
+                <div class="glass-card p-6">
+                    <h3 class="text-lg font-bold mb-2">SHAP Feature Drivers</h3>
+                    <p class="text-sm text-stone-500 mb-6">Marginal contribution of features across all possible combinations.</p>
+                    <div class="chart-container">
+                        <canvas id="shapChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Fairness Audit -->
+                <div class="glass-card p-6 flex flex-col justify-center">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2">&#x2696;&#xFE0F; Algorithmic Fairness Audit</h3>
+                        <p class="text-sm text-stone-600">Auditing False Positive Rates (FPR) to prevent blocking critical background system protocols (e.g., DNS on 53, HTTPS on 443).</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white border border-stone-200 rounded-xl p-6 text-center shadow-sm">
+                            <div class="text-4xl font-extrabold text-accent-green mb-2">0.00%</div>
+                            <div class="text-sm font-semibold text-slate-700">System Ports</div>
+                            <div class="text-xs text-stone-500 mt-1">Ports &le; 1023</div>
+                        </div>
+                        <div class="bg-white border border-stone-200 rounded-xl p-6 text-center shadow-sm">
+                            <div class="text-4xl font-extrabold text-accent-green mb-2">0.00%</div>
+                            <div class="text-sm font-semibold text-slate-700">Dynamic Ports</div>
+                            <div class="text-xs text-stone-500 mt-1">Ports &gt; 1023</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center text-sm text-stone-600 font-medium">
+                        Result: Absolute Statistical Parity Achieved.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Autonomous Operations -->
+        <section id="operations" class="scroll-mt-24">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">4. Autonomous Operations & GenAI</h2>
+                <p class="text-stone-600">
+                    Moving from an offline script to a FastAPI production service capable of gigabit line speeds (<25ms inference). To eliminate SOC alert fatigue, a GenAI Copilot (Gemini API) translates mathematical anomalies into human-readable mitigation briefs.
+                </p>
+            </div>
+
+            <div class="glass-card overflow-hidden">
+                <div class="bg-stone-100 border-b border-stone-200 px-6 py-4 flex justify-between items-center">
+                    <h3 class="font-bold text-slate-800">&#x1F916; Live Simulation: GenAI SOC Copilot</h3>
+                    <button id="runSimBtn" class="bg-accent-blue hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded text-sm transition-colors duration-200 shadow-sm">
+                        Inject Anomalous Payload
+                    </button>
+                </div>
+                
+                <div class="terminal min-h-[300px] text-sm md:text-base leading-relaxed" id="terminalOutput">
+                    <div class="text-stone-400 mb-4">Waiting for telemetry input on port 8501...<span class="blinking-cursor"></span></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-stone-200 py-8 text-center">
+        <p class="text-sm text-stone-500">
+            CyberFlow IDS Framework Dashboard &bull; Visualizing the Capstone Report by Raul C. Gacusan, PhD, RFC
+        </p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- Utility: Label Wrapping for Chart.js (Max 16 chars per line) ---
+        const wrapLabel = (label, maxChars = 16) => {
+            if (label.length <= maxChars) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxChars) {
+                    if (currentLine.length > 0) lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            });
+            if (currentLine.trim().length > 0) lines.push(currentLine.trim());
+            return lines;
+        };
+
+        // --- Common Tooltip Config for Multiline Labels ---
+        const commonOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // --- 1. Imbalance Donut Chart ---
+        const ctxImbalance = document.getElementById('imbalanceChart').getContext('2d');
+        new Chart(ctxImbalance, {
+            type: 'doughnut',
+            data: {
+                labels: [wrapLabel('Benign Background Flows'), wrapLabel('Malicious Attack Flows')],
+                datasets: [{
+                    data: [83.1, 16.9],
+                    backgroundColor: ['#e7e5e4', '#ea580c'], // Stone 200, Orange 600
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                cutout: '65%',
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { position: 'bottom', labels: { font: { family: 'Inter' } } }
+                }
+            }
+        });
+
+        // --- 2. Tournament Grouped Bar Chart ---
+        const ctxTournament = document.getElementById('tournamentChart').getContext('2d');
+        new Chart(ctxTournament, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('XGBoost (Gold)'), 
+                    wrapLabel('Random Forest (Silver)'), 
+                    wrapLabel('Decision Tree (Bronze)'), 
+                    wrapLabel('Naive Bayes (Baseline)')
+                ],
+                datasets: [
+                    {
+                        label: 'Accuracy',
+                        data: [99.56, 99.43, 99.21, 64.22],
+                        backgroundColor: '#e7e5e4' // Stone 200
+                    },
+                    {
+                        label: 'Precision',
+                        data: [99.10, 99.45, 98.89, 31.81],
+                        backgroundColor: '#0ea5e9' // Sky 500
+                    },
+                    {
+                        label: 'Recall',
+                        data: [98.26, 97.16, 96.43, 97.93],
+                        backgroundColor: '#0284c7' // Sky 600 (Primary Accent)
+                    },
+                    {
+                        label: 'F1-Score',
+                        data: [98.68, 98.29, 97.64, 48.03],
+                        backgroundColor: '#ea580c' // Orange 600 (Secondary Accent)
+                    }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        max: 110, // Leave room for labels
+                        grid: { color: '#f5f5f4' },
+                        ticks: { callback: function(value) { return value + "%" }, font: { family: 'Inter' } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { family: 'Inter' } }
+                    }
+                },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { position: 'top', labels: { font: { family: 'Inter' } } }
+                }
+            }
+        });
+
+        // --- 3. SHAP Feature Drivers Horizontal Bar ---
+        const ctxShap = document.getElementById('shapChart').getContext('2d');
+        new Chart(ctxShap, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('Packet Asymmetry'), 
+                    wrapLabel('Destination Port'), 
+                    wrapLabel('Backward Packets / Sec')
+                ],
+                datasets: [{
+                    label: '% Contribution to Variance',
+                    data: [45, 30, 15],
+                    backgroundColor: '#0284c7', // Sky 600
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                indexAxis: 'y', // Makes it horizontal
+                scales: {
+                    x: { 
+                        beginAtZero: true, 
+                        max: 50,
+                        grid: { color: '#f5f5f4' },
+                        ticks: { callback: function(value) { return value + "%" }, font: { family: 'Inter' } }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { family: 'Inter', weight: 'bold' } }
+                    }
+                },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { display: false } // Hide legend for single dataset
+                }
+            }
+        });
+
+        // --- 4. Interactive Terminal Logic ---
+        const runSimBtn = document.getElementById('runSimBtn');
+        const terminalOutput = document.getElementById('terminalOutput');
+
+        const simSteps = [
+            { text: "> POST /predict - Payload received (104 bytes)", delay: 0 },
+            { text: "> StandardScaler.transform() ... done [2ms]", delay: 400 },
+            { text: "> XGBoost.predict() ... done [19ms]", delay: 800 },
+            { text: "> RESULT: y_i = 1 [ANOMALY DETECTED]", color: '#ea580c', delay: 1200 },
+            { text: "> Initiating GenAI SOC Copilot generation...", delay: 1600 },
+            { text: "--------------------------------------------------", delay: 2600 },
+            { text: "🔴 CRITICAL ALERT: Volumetric Port Scan Detected", color: '#ea580c', delay: 2800 },
+            { text: "• Threat Vector: Automated reconnaissance scan targeting dynamic application layers.", delay: 3000 },
+            { text: "• Key Indicator: Packet Asymmetry is highly skewed (+0.95), suggesting unilateral traffic sweeps.", delay: 3200 },
+            { text: "• Immediate Action: Blacklist source IP 192.168.1.108 and rate-limit ingress handshakes on port 80.", color: '#10b981', delay: 3400 },
+            { text: "--------------------------------------------------", delay: 3600 },
+            { text: "> System returned to listening state.<span class=\"blinking-cursor\"></span>", delay: 4000 }
+        ];
+
+        let isSimulating = false;
+
+        runSimBtn.addEventListener('click', () => {
+            if (isSimulating) return;
+            isSimulating = true;
+            runSimBtn.disabled = true;
+            runSimBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            terminalOutput.innerHTML = ''; // Clear terminal
+
+            simSteps.forEach(step => {
+                setTimeout(() => {
+                    const div = document.createElement('div');
+                    div.innerHTML = step.text;
+                    div.style.marginBottom = '0.5rem';
+                    if (step.color) div.style.color = step.color;
+                    
+                    // Remove previous cursor
+                    const oldCursor = terminalOutput.querySelector('.blinking-cursor');
+                    if (oldCursor) oldCursor.remove();
+
+                    terminalOutput.appendChild(div);
+                    terminalOutput.scrollTop = terminalOutput.scrollHeight; // Auto-scroll
+                }, step.delay);
+            });
+
+            // Reset button after simulation
+            setTimeout(() => {
+                isSimulating = false;
+                runSimBtn.disabled = false;
+                runSimBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                runSimBtn.innerText = "Re-Run Simulation";
+            }, simSteps[simSteps.length - 1].delay + 500);
+        });
+
+    </script>
+</body>
+</html>

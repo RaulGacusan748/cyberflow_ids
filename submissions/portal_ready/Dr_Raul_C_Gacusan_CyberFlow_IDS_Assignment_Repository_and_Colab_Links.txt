@@ -1,0 +1,10 @@
+﻿CyberFlow IDS Final Submission Bundle
+
+Repository:
+https://github.com/RaulGacusan748/cyberflow_ids
+
+Release Tag:
+v1.0-submission
+
+Google Colab:
+https://colab.research.google.com/github/RaulGacusan748/cyberflow_ids/blob/main/notebooks/cyberflow_ids_tournament.ipynb

@@ -1,0 +1,28 @@
+CyberFlow IDS Final Upload Order
+
+Required Core Files
+1) 01_CyberFlow_IDS_Technical_Source_Code_Submission.pdf
+2) 02_CyberFlow_IDS_Final_Report.pdf
+3) 03_CyberFlow_IDS_Technical_Presentation.pdf
+4) 04_CyberFlow_IDS_Executive_Business_Presentation.pdf
+5) 05_Repository_and_Colab_Links.txt
+
+Step 2-3 Evidence Package
+6) 06_CyberFlow_IDS_EDA_Feature_Engineering_Report.md
+7) 07_SHAP_Summary_Top20.png
+8) 08_SHAP_Bar_Top20.png
+9) 09_SHAP_Top_Features.json
+10) 10_Data_Dictionary.csv
+11) 11_EDA_Feature_Engineering_Summary.json
+
+Step 6-9 Compliance + Optional Bonus Artifacts
+12) 12_Step6_to_Step9_Compliance_Check.md
+13) 13_Deployment_and_MLOps_Guide.md
+14) 14_Demo_API_Runbook.md
+15) 15_Generative_AI_Usage.md
+16) 16_FastAPI_App_Source.py
+17) 17_API_Smoke_Test.py
+18) 18_API_Smoke_Test_Output.txt
+
+Optional for Maximum Step 8/9 Scoring
+- Add a demo media file: cyberflow_api_demo.mp4 (or .gif)
